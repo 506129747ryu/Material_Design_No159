@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.tutorial.healthapp.Adapter.CategoryAdapter;
 import com.tutorial.healthapp.Domain.CategoryDomain;
@@ -22,6 +24,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initRecylerViewCat();
+        initLocation();
+
+    }
+
+    private void initLocation() {
+        String[] items = new String[]{
+                "LosAngles, USA",
+                "NewYork, USA",
+                "Tokyo, Japan"
+        };
+        final Spinner locationSpin = findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        locationSpin.setAdapter(adapter);
     }
 
     private void initRecylerViewCat() {
