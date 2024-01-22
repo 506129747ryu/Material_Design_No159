@@ -13,6 +13,9 @@
         android:theme="@style/Theme.HealthApp"
         tools:targetApi="33">
         <activity
+            android:name=".Activity.DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.MainActivity"
             android:exported="false" />
         <activity
